@@ -30,3 +30,33 @@ const makeTeam = team => {
     //     return 
     // }
 }
+
+// `<div class="card" style="width: 18rem;">
+// <div class="card-body">
+//     <h5 class="card-title">${intern.role}</h5>
+// </div>
+//   <ul class="list-group list-group-flush">
+//     <li class="list-group-item">${intern.name}</li>
+//     <a href='mailto:${intern.email}'><li class="list-group-item">${intern.email}</li></a>
+//     <li class="list-group-item">${intern.id}</li>
+//   </ul>
+//   <div class="card-body">
+//   </div>
+// </div>`
+
+
+// `<div class="card" style="width: 18rem;">
+// <div class="card-body">
+//     <h5 class="card-title">${manager.role}</h5>
+// </div>
+//   <ul class="list-group list-group-flush">
+//     <li class="list-group-item">${manager.name}</li>
+//     <a href='mailto:${manager.email}'><li class="list-group-item">${manager.email}</li></a>
+//     <li class="list-group-item">${manager.id}</li>
+//   </ul>
+//   <div class="card-body">
+//   </div>
+// </div>`
+
+
+
