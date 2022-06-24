@@ -153,8 +153,14 @@ const init = () => {
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <title>Company Directory</title>
         </head>
+        <header>
+            <nav class="navbar bg-info">
+                <div class="container-fluid justify-content-center">
+                <h1>Company Directory</h1>
+                </div>
+            </nav>
         <body>
-        <div class = 'd-flex justify-content-center align-items-center>
+        <div class = 'd-flex justify-content-center align-items-center m-4'>
         ${renderTeam(teamMemberObjArray)}
         </div>
         </body>

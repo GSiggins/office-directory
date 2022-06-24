@@ -4,7 +4,8 @@ const fs = require('fs');
 const makeTeam = team => {
 
   const generateManagerCard = manager => {
-    return `<div class="card text-bg-primary mb-4" style="width: 18rem;">
+    return `
+<div class="card bg-info shadow-lg p-3 mb-5 m-4 bg-body rounded" style="width: 18rem;">
 <div class="card-body">
     <h5 class="card-title">${manager.getRole()}</h5>
 </div>
@@ -14,11 +15,13 @@ const makeTeam = team => {
     <li class="list-group-item"> ID: ${manager.id}</li>
     <li class="list-group-item"> Office Number: ${manager.getOfficeNumber()}</li>
   </ul>
-</div>`
+</div>
+`
   }
 
   const generateInternCard = intern => {
-    return `<div class="card text-bg-dark p-4" style="width: 18rem;">
+    return `
+<div class="card bg-info shadow-lg p-3 mb-5 m-4 bg-body rounded"  style="width: 18rem;">
 <div class="card-body">
     <h5 class="card-title">${intern.getRole()}</h5>
 </div>
@@ -28,11 +31,13 @@ const makeTeam = team => {
     <li class="list-group-item"> ID: ${intern.id}</li>
     <li class="list-group-item"> School: ${intern.getSchool()}</li>
   </ul>
-</div>`
+</div>
+`
   }
 
   const generateEngineerCard = engineer => {
-    return `<div class="card text-bg-dark p-4" style="width: 18rem;">
+    return `
+<div class="card bg-info shadow-lg p-3 mb-5 m-4 bg-body rounded" style="width: 18rem;">
 <div class="card-body">
     <h5 class="card-title">${engineer.getRole()}</h5>
 </div>
@@ -42,7 +47,8 @@ const makeTeam = team => {
     <li class="list-group-item"> ID: ${engineer.id}</li>
     <a href='${engineer.getGithub()}'><li class="list-group-item"> GitHub: ${engineer.getGithub()}</li></a>
   </ul>
-</div>`
+</div>
+`
   }
 
   const html = [];
