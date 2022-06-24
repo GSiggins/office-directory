@@ -1,5 +1,7 @@
 const inquirer = require('inquirer')
 const Manager = require('./lib/manager')
+const Engineer = require('./lib/engineer')
+const Intern = require('./lib/intern')
 const fs = require('fs')
 const renderTeam = require('./src/html-templates')
 
@@ -35,7 +37,7 @@ const init = () => {
                     answers.id,
                     answers.name,
                     answers.email,
-                    answers.officenumber,
+                    answers.officeNumber,
                 )
                 teamMemberObjArray.push(manager);
                 addEmployees();
@@ -62,7 +64,7 @@ const init = () => {
                 {
                     type: 'input',
                     message: 'What is the engineers github?',
-                    name: 'officeNumber'
+                    name: 'github'
                 },
             ])
             .then(answers => {
@@ -81,31 +83,31 @@ const init = () => {
             .prompt([
                 {
                     type: 'input',
-                    message: 'What is the engineers name?',
+                    message: 'What is the intern name?',
                     name: 'name'
                 },
                 {
                     type: 'input',
-                    message: 'What is the engineers id?',
+                    message: 'What is the intern id?',
                     name: 'id'
                 },
                 {
                     type: 'input',
-                    message: 'What is the engineers email?',
+                    message: 'What is the intern email?',
                     name: 'email'
                 },
                 {
                     type: 'input',
-                    message: 'What is the engineers github?',
-                    name: 'officeNumber'
+                    message: 'What is the intern school?',
+                    name: 'school'
                 },
             ])
             .then(answers => {
-                const engineer = new Engineer(
+                const engineer = new Intern(
                     answers.id,
                     answers.name,
                     answers.email,
-                    answers.github,
+                    answers.school,
                 )
                 teamMemberObjArray.push(engineer);
                 addEmployees();
@@ -141,7 +143,21 @@ const init = () => {
 
 
     function buildTeam() {
-        fs.writeFile('./dist/index.html', renderTeam(teamMemberObjArray))
+        const html = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+        ${renderTeam(teamMemberObjArray)}
+        </body>
+        </html>`
+        fs.writeFile('./dist/index.html', html, (err) => 
+        err ? console.error(err) : console.log("Success!")
+        )
     }
 
 
